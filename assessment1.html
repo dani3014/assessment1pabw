@@ -29,6 +29,24 @@
             text-align: center;
             margin-top: 20px;
         }
+        .form-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +57,24 @@
             <p>NIM: 6701223129</p>
             <p>Kelas: D3SI 46-04</p>
         </div>
+        <div class="form-container">
+            <input type="text" id="jumlah" placeholder="Jumlah">
+            <select id="pilihan">
+                <option value="sherlock">Sherlock</option>
+                <option value="lupin">Lupin</option>
+                <option value="aladin">Aladin</option>
+            </select>
+            <button onclick="submitForm()">Submit</button>
+        </div>
     </div>
+
+    <script>
+        function submitForm() {
+            var jumlah = document.getElementById("jumlah").value;
+            var pilihan = document.getElementById("pilihan").value;
+            console.log("Jumlah:", jumlah);
+            console.log("Pilihan:", pilihan);
+        }
+    </script>
 </body>
 </html>
