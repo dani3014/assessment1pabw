@@ -76,24 +76,31 @@
         ];
 
         function submitForm() {
-            var jumlah = document.getElementById("jumlah").value;
+            var jumlah = parseInt(document.getElementById("jumlah").value);
             var pilihan = document.getElementById("pilihan").value;
 
-            if (jumlah === "") {
-                alert("Mohon isi jumlah buku.");
+            if (jumlah === "" || isNaN(jumlah)) {
+                alert("Mohon isi jumlah buku dengan angka.");
                 return;
             }
 
             var bukuDitemukan = false;
+            var bukuIndex;
             for (var i = 0; i < buku.length; i++) {
                 if (buku[i].nama === pilihan) {
                     bukuDitemukan = true;
+                    bukuIndex = i;
                     break;
                 }
             }
 
             if (!bukuDitemukan) {
                 alert("Buku tidak ditemukan.");
+                return;
+            }
+
+            if (jumlah > buku[bukuIndex].jumlah) {
+                alert("Jumlah buku tidak tersedia.");
                 return;
             }
 
