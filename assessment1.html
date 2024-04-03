@@ -84,6 +84,19 @@
                 return;
             }
 
+            var bukuDitemukan = false;
+            for (var i = 0; i < buku.length; i++) {
+                if (buku[i].nama === pilihan) {
+                    bukuDitemukan = true;
+                    break;
+                }
+            }
+
+            if (!bukuDitemukan) {
+                alert("Buku tidak ditemukan.");
+                return;
+            }
+
             console.log("Jumlah:", jumlah);
             console.log("Pilihan:", pilihan);
         }
